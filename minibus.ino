@@ -22,6 +22,7 @@ unsigned long lastGreenFlash = 0;
 ModbusIP mb;
 
 void setup() {
+  Serial.begin(115200);
   pinMode(RED_LED_PIN, OUTPUT);
   pinMode(BLUE_LED_PIN, OUTPUT);
   pinMode(GREEN_LED_PIN, OUTPUT);
@@ -87,9 +88,15 @@ bool isConnected() {
   return WiFi.status() == WL_CONNECTED;
 }
 
+// For static IP assignment.
+IPAddress ip(10,27,200,38);
+IPAddress gateway(10,27,0,1);
+IPAddress subnet(255,255,0,0);
+
 void connect() {
   WiFi.hostname("minibus");
   WiFi.begin(SSID, PASSWORD);
+  WiFi.config(ip, gateway, subnet);
   while (!isConnected()) {
     digitalWrite(BLUE_LED_PIN, !digitalRead(BLUE_LED_PIN));
     delay(1000);
@@ -99,5 +106,4 @@ void connect() {
   mb.addCoil(DISPATCH_COIL);
   mb.addCoil(IS_DISPATCHING_COIL);
   digitalWrite(BLUE_LED_PIN, HIGH);
-
 }

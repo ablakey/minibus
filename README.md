@@ -2,6 +2,8 @@
 
 A Modbus client on an ESP8266.
 
+![Minibus Hardware](./minibus_hardware.png?raw=true)
+
 Minibus has two capabilities:
 
 1. Red LED if COIL 100 is high (an alert)
