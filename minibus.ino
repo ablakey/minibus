@@ -1,6 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <Modbus.h>
 #include <ModbusIP_ESP8266.h>
+#include "config.h"
 
 const unsigned long GREEN_FLASH_RATE = 500;
 const unsigned long DISPATCH_DEBOUNCE = 2000;
@@ -87,6 +88,7 @@ bool isConnected() {
 }
 
 void connect() {
+  WiFi.hostname("minibus");
   WiFi.begin(SSID, PASSWORD);
   while (!isConnected()) {
     digitalWrite(BLUE_LED_PIN, !digitalRead(BLUE_LED_PIN));

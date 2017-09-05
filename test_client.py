@@ -3,13 +3,12 @@ from time import sleep
 from pymodbus.client.sync import ModbusTcpClient
 
 
-SERVER_IP = '192.168.1.5'
+SERVER_HOSTNAME = 'minibus'
 
 
-print 'Trying to connect to {}.'.format(SERVER_IP)
-client = ModbusTcpClient(SERVER_IP)
+print 'Trying to connect to {}.'.format(SERVER_HOSTNAME)
+client = ModbusTcpClient(SERVER_HOSTNAME)
 
-coil_state = False
 
 try:
     while True:
@@ -26,8 +25,5 @@ try:
             client.write_coil(104, False);
         else:
             sleep(1)
-
-        coil_state = not coil_state
-        client.write_coil(100, coil_state)
 finally:
     client.close()
