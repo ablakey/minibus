@@ -14,9 +14,6 @@ const int BLUE_LED_PIN = 4;
 const int GREEN_LED_PIN = 14;
 const int BUTTON_PIN = 5;
 
-const char* SSID = "YOUR SSID HERE";
-const char* PASSWORD = "YOUR PASSWORD HERE";
-
 bool sendDispatchSignal = false;
 
 unsigned long lastGreenFlash = 0;
@@ -82,7 +79,7 @@ void loop() {
   else
   {
     digitalWrite(RED_LED_PIN, LOW);
-  } 
+  }
 }
 
 bool isConnected() {
