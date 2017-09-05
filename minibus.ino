@@ -3,6 +3,11 @@
 #include <ModbusIP_ESP8266.h>
 #include "config.h"
 
+
+// const char* SSID = "YOUR SSID HERE";
+// const char* PASSWORD = "YOUR PASSWORD HERE";
+
+
 const unsigned long GREEN_FLASH_RATE = 500;
 const unsigned long DISPATCH_DEBOUNCE = 2000;
 
