@@ -10,3 +10,9 @@ Minibus has two capabilities:
 2. Push button to signal a job to be dispatched. Green LED flashes while job is pending. Green LED is solid when job is in progress. Green LED goes off when job is done.
 
 Blue LED will flash as system starts up and connects. Goes solid when system is running and successfully connected.
+
+## Circuit Diagram
+
+This doesn't include all the "learning moments" I included in the final build.
+
+![Minibus Diagram](./circuit_diagram.jpg?raw=true)
